@@ -1,9 +1,11 @@
+# ESERCIZIO (SELECT)
+
 1. Selezionare tutti gli studenti nati nel 1990 (160)
 
 ```SQL
 
 SELECT
-COUNT(*)
+`date_of_birth`
 FROM `students`
 WHERE `date_of_birth` BETWEEN "1990-01-01" AND "1990-12-31"
 ;
@@ -92,3 +94,50 @@ where `phone` IS NULL
 ;
 
 ```
+
+---
+
+# BONUS (GROUP BY)
+
+1. Contare quanti iscritti ci sono stati ogni anno
+
+```SQL
+
+SELECT
+YEAR(`enrolment_date`) ,
+COUNT(*)
+FROM
+`students`
+GROUP BY
+YEAR(`enrolment_date`)
+;
+
+```
+
+2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+
+```SQL
+SELECT `office_address`,
+COUNT(*)
+FROM `teachers`
+GROUP BY `office_address`
+ORDER BY `office_address` ASC
+;
+
+
+```
+
+3. Calcolare la media dei voti di ogni appello d'esame
+
+```SQL
+
+SELECT
+AVG(`vote`)
+FROM `exam_student`
+GROUP BY
+(`vote`)
+;
+
+```
+
+4. Contare quanti corsi di laurea ci sono per ogni dipartimento
