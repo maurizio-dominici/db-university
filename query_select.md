@@ -1,25 +1,34 @@
 1. Selezionare tutti gli studenti nati nel 1990 (160)
 
 ```SQL
+
 SELECT
 COUNT(*)
 FROM `students`
 WHERE `date_of_birth` BETWEEN "1990-01-01" AND "1990-12-31"
 ;
+
 ```
 
 2. Selezionare tutti i corsi che valgono più di 10 crediti (479)
 
 ```SQL
+
 SELECT `cfu`
 FROM `courses`
 WHERE `cfu` > "10"
 ;
+
 ```
 
 3. Selezionare tutti gli studenti che hanno più di 30 anni
 
 ```SQL
+
+SELECT `date_of_birth`
+FROM `students`
+WHERE `date_of_birth` > "1995-06-11"
+;
 
 ```
 
@@ -39,6 +48,12 @@ WHERE `cfu` > "10"
 6. Selezionare tutti i corsi di laurea magistrale (38)
 
 ```SQL
+
+SELECT
+COUNT(level)
+FROM degrees
+WHERE level = "magistrale"
+;
 
 ```
 
