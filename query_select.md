@@ -71,4 +71,10 @@ FROM `departments`
 
 ```SQL
 
+SELECT
+COUNT(*)
+FROM `teachers`
+where `phone` IS NULL
+;
+
 ```
