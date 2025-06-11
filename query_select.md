@@ -50,9 +50,9 @@ WHERE `date_of_birth` > "1995-06-11"
 ```SQL
 
 SELECT
-COUNT(level)
-FROM degrees
-WHERE level = "magistrale"
+COUNT(`level`)
+FROM `degrees`
+WHERE `level` = "magistrale"
 ;
 
 ```
@@ -60,6 +60,10 @@ WHERE level = "magistrale"
 7. Da quanti dipartimenti è composta l'università? (12)
 
 ```SQL
+SELECT
+COUNT(`id`)
+FROM `departments`
+;
 
 ```
 
