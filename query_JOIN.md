@@ -87,6 +87,21 @@ ORDER BY `students`.`name`ASC, `students`.`surname` ASC
 
 ```SQL
 
+SELECT
+`degrees`.`id` AS "degree_id",
+`degrees`.`name` AS "degree_name",
+`teachers`.`id` AS "teachers_id" ,
+`teachers`.`name` AS "teachers_name",
+`teachers`.`surname` AS "teachers_surname"
+FROM `teachers`
+INNER JOIN `course_teacher`
+ON `teachers`.`id`=`course_teacher`.`teacher_id`
+INNER JOIN `courses`
+ON `courses`.`id`=`course_teacher`.`course_id`
+INNER JOIN `degrees`
+ON `degrees`.`id`=`courses`.`degree_id`
+;
+
 ```
 
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di
